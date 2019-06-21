@@ -6,7 +6,7 @@ def get_guess():
   
   # streepjes geven lengte van woord aan 
   # 10 beurten
-  dashes = "_ " * len(secret_word)
+  dashes = "-"* len(secret_word)
   guesses_left = 10 
   
   # dit gaat in een loop als de volgende dingen waar zijn
@@ -24,8 +24,8 @@ def get_guess():
     guess = input("Gok een letter:")
     
     # dit komt in beeld, als er een verkeerde input is gegeven 
-    if len(guess) != 1:
-      print ("Per beurt mag je één letter gokken.")
+    if len(guess) != 1 or guess.isdigit():
+      print ("Per beurt mag je één letter gokken en geen cijfers invoeren.")
       
     # als de letter in het woord zit dan update je de dashes 
     # corresponding dash with the correct index the guess belongs to in the 
